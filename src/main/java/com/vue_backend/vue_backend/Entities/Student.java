@@ -6,70 +6,81 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "student_DB")
+@Table(name = "student")
 public class Student {
     @Id
-    @Column(name = "stu_id", unique = true, nullable = false)
-    private int id;
-    private String name;
-    private String dept;
-    private String year;
-    private String address;
+    @Column(name = "stuno", unique = true, nullable = false)
+    private int stuno;
+    private String stuname;
+    private String studept;
+    private String stuage;
+    private String director;
+       @Override
+    public String toString() {
+        return "Student [director=" + director + ", stuage=" + stuage + ", studept=" + studept + ", stuname=" + stuname
+                + ", stuno=" + stuno + "]";
+    }
+
+
+
+    public Student(int stuno, String stuname, String studept, String stuage, String director) {
+        this.stuno = stuno;
+        this.stuname = stuname;
+        this.studept = studept;
+        this.stuage = stuage;
+        this.director = director;
+    }
+
+
+
+
+    public int getStuno() {
+        return stuno;
+    }
+
+    public void setStuno(int stuno) {
+        this.stuno = stuno;
+    }
+
+    public String getStuname() {
+        return stuname;
+    }
+
+    public void setStuname(String stuname) {
+        this.stuname = stuname;
+    }
+
+    public String getStudept() {
+        return studept;
+    }
+
+    public void setStudept(String studept) {
+        this.studept = studept;
+    }
+
+    public String getStuage() {
+        return stuage;
+    }
+
+    public void setStuage(String stuage) {
+        this.stuage = stuage;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+ 
 
     public Student() {
     }
 
-    public int getId() {
-        return id;
-    }
+   
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDept() {
-        return dept;
-    }
-
-    public void setDept(String dept) {
-        this.dept = dept;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Book [address=" + address + ", dept=" + dept + ", id=" + id + ", name=" + name + ", year=" + year + "]";
-    }
-
-    public Student(int id, String name, String dept, String year, String address) {
-        this.id = id;
-        this.name = name;
-        this.dept = dept;
-        this.year = year;
-        this.address = address;
-    }
 
 }

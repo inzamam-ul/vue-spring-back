@@ -56,15 +56,16 @@ public class StudentController {
         }
     }
 
-    @GetMapping("/DeleteStudent/{id}")
+    @DeleteMapping("/DeleteStudent/{id}")
     public List<Student> DeleteBook(@PathVariable("id") int id) {
 
         return this.studentService.deleteBook(id);
 
     }
 
-    @GetMapping("/updateStudent/{id}")
+    @PostMapping("/updateStudent/{id}")
     public List<Student> updateStudent(@RequestBody Student stu, @PathVariable("id") int id) {
+        System.out.println(id);
 
         return this.studentService.updateStudent(stu, id);
 

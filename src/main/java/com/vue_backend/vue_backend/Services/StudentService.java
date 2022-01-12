@@ -65,7 +65,7 @@ public class StudentService {
         List<Student> student = null;
 
         try {
-            stu.setId(id);
+           
             studentRepository.save(stu);
             student = (List<Student>) this.studentRepository.findAll();
 
